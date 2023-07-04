@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+  --nav-icon-color: rgba(255,255,255,.55);
+  --hover-nav-icon-color: #ffffffbf;
+  --sidebar-icon-color: #8d97ad;
+  --body-bg: #DCDBE0;
+  --text-color: #212529;
+  --border-color: #e7eaf3b3;
+  --card-text-color: #8c98a4;
+  --card-icon-color: #8c98a4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  font-size: 17px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.myGlassBg {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.3);
+  width: 100wh;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(9px);
+}
+.myliForDropDown:hover .myDivDrop {
+  display: block;
+}
+.myliForDropDown:active .myDivDrop {
+  display: block;
+}
+.myZImg {
+  position: absolute;
+  z-index: -5;
+}
+.myBorderColor:focus{
+  border-color: rgb(163 230 53);
+}
+
+.snow-bg {
+  position: relative;
+}
+
+.snow-bg:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  opacity: 85%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image: url("https://library.elementor.com/resources/christmas-snow-effect/s1.png"),
+    url("https://library.elementor.com/resources/christmas-snow-effect/s2.png"),
+    url("https://library.elementor.com/resources/christmas-snow-effect/s3.png");
+  animation: snow 10s linear infinite;
+}
+
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px;
+  }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px;
+  }
+}
+
+.myImg {
+  animation-name: myImg;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes myImg {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.myDarkBtnMoveUp {
+  animation-name: myDarkBtnMoveUp;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes myDarkBtnMoveUp {
+  from {
+    transform: translateX(20px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+.myDarkBtnMoveDown {
+  animation-name: myDarkBtnMoveDown;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes myDarkBtnMoveDown {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(26px);
+  }
+}
+
+.active{
+  @apply border-l-4 border-green-700 text-green-700
+}
+
+.flex-between-center{
+  @apply flex flex-wrap justify-between items-center;
+}
+.flex-center-center{
+  @apply flex flex-wrap justify-center items-center;
+}
+
+.btn {
+  @apply rounded-md text-sm md:text-lg font-medium;
+}
+
+
+/* custom loader */
+.custom-loader {
+  --d:22px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  color: #15803D;
+  box-shadow: 
+    calc(1*var(--d))      calc(0*var(--d))     0 0,
+    calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
+    calc(0*var(--d))      calc(1*var(--d))     0 2px,
+    calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+    calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+    calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+    calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+  animation: s7 1s infinite steps(8);
+}
+
+@keyframes s7 {
+  100% {transform: rotate(1turn)}
+}
+
+
+/* calendar css */
+.MuiTableRow-head th {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.MuiTableRow-root  .MuiTableCell-body {
+  font-size: 15px;
+  font-weight: 400;
+  color: #212529da;
+}
+
+.fc-toolbar-chunk .fc-today-button{
+  text-transform: capitalize;
+}
+
+.fc-toolbar-chunk .fc-toolbar-title{
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.fc-button-group .fc-dayGridMonth-button, .fc-button-group .fc-timeGridWeek-button,.fc-button-group .fc-timeGridDay-button{
+  text-transform: capitalize;
+}
+
+.fc-col-header thead{
+  background-color: #e9ecef;
+}
+
+.fc-col-header-cell .fc-col-header-cell-cushion{
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.fc-button-group .fc-button-primary:focus{
+  outline: none;
+  box-shadow: none;
+} 
+.fc-button-group  .fc-button-primary:not(:disabled):active:focus{
+  box-shadow: none;
+}
+
+.fc-scrollgrid-sync-inner{
+  padding: 15px;
+}
+
+
+/* bar-chart css */
+#canvas-container {
+  /* width:80vw; */
+  /* height: 38.5vh;  large screen */ 
+  height: 39.5vh; /* 40 */
+  position: relative;
+  padding: 20px;
+  /* background-color: blue; */
+}
+ 
+@media (max-width: 760px) {
+  .fc .fc-toolbar{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  }
+  .fc .fc-button{
+    font-size: 0.6em;
+    margin-bottom: 10px;
+  }
+  .fc-toolbar-chunk .fc-toolbar-title {
+    font-size: 15px !important;
+  }
+  .fc-col-header-cell .fc-col-header-cell-cushion{
+    font-size: 13px !important;
+    font-weight: 600;
+  }
+  .fc-daygrid-day-number{
+    font-size: 14px;
+  }
+
+  .fc-scrollgrid-sync-inner{
+    padding: 0;
+  }
+  
+  #canvas-container {
+    height: 40vh;
+    width: auto;
+    padding: 0;
+    padding-right: 15px !important;
+ }
+ .Toastify__toast-theme--light{
+  width: 85%;
+  margin: auto;
+  margin-top: 15px;
+ }
+
+ .swal-wide{
+  width: 80% !important;
+  margin-left: 70px !important;
+}
+
+}
+
+@media (max-width: 768px){
+  .fc-scrollgrid-sync-inner{
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1441px) {
+  #canvas-container {
+    /* width:80vw; */
+    /* height: 37.5vh; */
+    height: 36.7vh; 
+    position: relative;
+    padding: 20px;
+    /* background-color: red; */
+  }
+}
