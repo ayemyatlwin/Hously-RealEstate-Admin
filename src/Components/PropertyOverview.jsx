@@ -26,8 +26,8 @@ const rows = [
   createData(
     "Steave Jobs",
     "#85457898",
-    "http://eliteadmin.themedesigner.in/demos/bt4/assets/images/property/prop1.jpeg",
-    "Swanim villa",
+    "https://cdn.pixabay.com/photo/2016/11/21/15/09/apartments-1845884_1280.jpg",
+    "Apartment",
     "Sold",
     "10-7-2017",
     "paid",
@@ -37,8 +37,8 @@ const rows = [
   createData(
     "Varun Dhavan",
     "#95457898	",
-    "http://eliteadmin.themedesigner.in/demos/bt4/assets/images/property/prop2.jpeg",
-    "River view home",
+    "https://cdn.pixabay.com/photo/2015/11/06/11/39/single-family-home-1026368_1280.jpg",
+    "River view house",
     "On Rent",
     "09-7-2017",
     "pending",
@@ -48,8 +48,8 @@ const rows = [
   createData(
     "Ritesh Desh",
     "#68457898	",
-    "http://eliteadmin.themedesigner.in/demos/bt4/assets/images/property/prop3.jpeg",
-    "Gray Chair",
+    "https://cdn.pixabay.com/photo/2020/03/21/20/03/real-estate-4955086_1280.jpg",
+    "Luxury Villa",
     "Sold",
     "08-7-2017",
     "paid",
@@ -59,8 +59,8 @@ const rows = [
   createData(
     "Hrithik",
     "#45457898",
-    "http://eliteadmin.themedesigner.in/demos/bt4/assets/images/property/prop3.jpeg",
-    "Pure Wooden chair",
+    "https://cdn.pixabay.com/photo/2017/07/07/13/55/giethoorn-2481483_1280.jpg",
+    "Cottage",
     "Sold",
     "03-7-2017",
     "on hold",
@@ -101,7 +101,7 @@ const PropertyOverview = () => {
               </TableCell>
               <TableCell>{row.orderID}</TableCell>
               <TableCell>
-                <img src={row.photo} alt="" className="w-[80px]" />
+                <img src={row.photo} alt="" className="w-[80px] h-[70px] object-cover aspect-auto" />
               </TableCell>
               <TableCell>{row.property}</TableCell>
               <TableCell>{row.type}</TableCell>
