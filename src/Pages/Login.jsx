@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const [username, setUserName] = useState("ella");
-  const [password, setPassword] = useState("123");
+  const [password, setPassword] = useState("teamf123");
 
   const [id, setId ] = useState(1);
   
